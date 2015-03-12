@@ -5,9 +5,9 @@ jQuery(document).ready(function($){
 		var inputFields = $('.floating-labels .cd-label').next();
 		inputFields.each(function(){
 			var singleInput = $(this);
-			//check if user is filling one of the form fields
+			//check if user is filling one of the form fields 
 			checkVal(singleInput);
-			singleInput.keyup(function(){
+			singleInput.on('change keyup', function(){
 				checkVal(singleInput);	
 			});
 		});
