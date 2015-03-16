@@ -127,6 +127,11 @@ Form
 .cd-form .cd-form-list {
   margin-top: 16px;
 }
+.cd-form .cd-form-list::after {
+  clear: both;
+  content: "";
+  display: table;
+}
 .cd-form .cd-form-list li {
   /* wrapper for radio and checkbox input types */
   display: inline-block;
@@ -135,7 +140,8 @@ Form
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  margin: 0 20px 16px 0;
+  margin: 0 26px 16px 0;
+  float: left;
 }
 .cd-form input[type=radio],
 .cd-form input[type=checkbox] {
@@ -200,6 +206,11 @@ Form
 .cd-form input[type="checkbox"] + label::after {
   /* custom image for checkbox */
   background-image: url("../img/cd-icon-check.svg");
+}
+.cd-form input[type="radio"]:focus + label::before,
+.cd-form input[type="checkbox"]:focus + label::before {
+  /* add focus effect for radio and check buttons */
+  box-shadow: 0 0 5px rgba(44, 151, 222, 0.6);
 }
 .cd-form input[type="radio"]:checked + label::after,
 .cd-form input[type="checkbox"]:checked + label::after {

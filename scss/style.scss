@@ -140,6 +140,7 @@ Form
 
 	.cd-form-list {
 		margin-top: 16px;
+		@include clearfix;
 	}
 
 	.cd-form-list li {
@@ -147,7 +148,8 @@ Form
 		display: inline-block;
 		position: relative;
 		@include user-select(none);
-		margin: 0 20px 16px 0;
+		margin: 0 26px 16px 0;
+		float: left;
 	}
 
 	input[type=radio],
@@ -217,6 +219,12 @@ Form
 	input[type="checkbox"] + label::after {
 		/* custom image for checkbox */
 		background-image: url('../img/cd-icon-check.svg');
+	}
+
+	input[type="radio"]:focus + label::before,
+	input[type="checkbox"]:focus + label::before {
+		/* add focus effect for radio and check buttons */
+		box-shadow: 0 0 5px rgba($color-2, .6);
 	}
 
 	input[type="radio"]:checked + label::after,
